@@ -1,0 +1,7 @@
+[% title = 'Forbidden' | maketext %]
+
+<p>[% 'You are not allowed to access the page <strong>%1</strong>' | maketext(c.req.path) %]</p>
+
+[% IF error_message %]
+<p><strong>[% error_message %]</strong></p>
+[% END %]

@@ -1,0 +1,98 @@
+<!doctype html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="[% page.lang %]"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="[% page.lang %]"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="[% page.lang %]"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="[% page.lang %]"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>[% page.title %]</title>
+  <meta name="description" content="[% page.description %]">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="../static/css/jquery-ui-1.8.16.custom.css">
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/local.css">
+
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+
+  <!--<script src="js/libs/modernizr-2.0.6.min.js"></script>-->
+</head>
+<body>
+
+  <section role="alert" id="message">
+    <div class="message_sticky">
+      <div class="message-icon message-icon-alert"></div>
+      <div class="message-text">Text Info Text InfoText InfoText InfoText InfoText InfoText InfoText Info
+      Text InfoText InfoText InfoTextText InfoText InfoText InfoTextText InfoTex tTextText InfoTextTextdddTextText I  ssnfoTextTextTextText
+      Text InfoText InfoText InfoText InfoText InfoText InfoText Info Text Info Text Info </div>
+      <a href="" class="message-close">&nbsp;</a>
+    </div>
+    <div class="message-sticky">
+      <div class="message-icon message-icon-info"></div>
+      <div class="message-text">aaa bbbbbcc ccccd dddd</div>
+      <a href="" class="message-close">&nbsp;</a>
+    </div>
+    <div>
+      <div class="message-icon message-icon-question"></div>
+      <div class="message-text">xxxxxxx yyyyyyy</div>
+      <a href="" class="message-close">&nbsp;</a>
+    </div>
+  </section>
+  
+  <section id="navigation"">
+    <div id="navgation-logo"></div>
+    <div id="navgation-name">[% page.app %]</div>
+    <div id="navgation-main" role="menubar" >
+      <ul>
+        <li role="menuitem"><a href="#">Home</a></li>
+        <li role="menuitem"><a href="#">About</a></li>
+        <li role="menuitem">
+          <a href="#">Services</a>
+          <ul>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Print</a></li>
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+        </li>
+        <li role="menuitem"><a href="#">Portfolio</a></li>
+        <li role="menuitem"><a href="#">Clients</a></li>
+        <li role="menuitem"><a href="#">Our blog</a></li>
+        <li role="menuitem"><a href="#">Downloads</a></li>
+      </ul>
+    </div>
+    <div id="navgation-user" role="menubar">
+      <ul>
+        <li role="menuitem"><a href="/logout" id="navigation-user-logout">Logout</a></li>
+        <li role="menuitem"><a href="/settings" id="navigation-user-settings">Settings</a></li>
+        <li role="menuitem">
+          <a href="#" id="navigation-user-name">[% user.fullname %]
+          <img id="navigation-user-avatar" src="http://www.gravatar.com/avatar/d73002116c8244d8fd2042cc422c2117?s=22" alt="[% user.fullname %]">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section role="main">
+  </section>
+
+  </div>
+  <footer>
+
+  </footer>
+</div> <!--! end of #container -->
+
+<script src="../js/jquery-1.6.4.min.js"></script>
+
+<!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+[% title = 'Server error' | maketext %]
+
+<p>[% 'An error occured while processing the page <strong>%1</strong>:' | maketext(c.req.path) %]</p>
+
+[% IF error_message %]
+<p><code>[% error_message %]</code></p>
+[% END %]

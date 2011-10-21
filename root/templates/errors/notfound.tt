@@ -1,0 +1,3 @@
+[% title = 'Page not found' | maketext %]
+
+<p>[% 'The requested page <strong>%1</strong> could not be found' | maketext(c.req.path) %]</p>
