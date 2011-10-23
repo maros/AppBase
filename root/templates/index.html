@@ -26,28 +26,38 @@
   <section role="alert" id="message">
     <div class="message_sticky">
       <div class="message-icon message-icon-alert"></div>
+      <a href="" class="message-close">&nbsp;</a>
       <div class="message-text">Text Info Text InfoText InfoText InfoText InfoText InfoText InfoText Info
       Text InfoText InfoText InfoTextText InfoText InfoText InfoTextText InfoTex tTextText InfoTextTextdddTextText I  ssnfoTextTextTextText
       Text InfoText InfoText InfoText InfoText InfoText InfoText Info Text Info Text Info </div>
-      <a href="" class="message-close">&nbsp;</a>
     </div>
     <div class="message-sticky">
       <div class="message-icon message-icon-info"></div>
-      <div class="message-text">aaa bbbbbcc ccccd dddd</div>
       <a href="" class="message-close">&nbsp;</a>
+      <div class="message-text">aaa bbbbbcc ccccd dddd</div>
     </div>
     <div>
       <div class="message-icon message-icon-question"></div>
-      <div class="message-text">xxxxxxx yyyyyyy</div>
       <a href="" class="message-close">&nbsp;</a>
+      <div class="message-text">xxxxxxx yyyyyyy</div>
     </div>
   </section>
   
-  <section id="navigation"">
-    <div id="navgation-logo"></div>
-    <div id="navgation-name">[% page.app %]</div>
-    <div id="navgation-main" role="menubar" >
-      <ul>
+  <section id="navigation">
+    <div id="navigation-logo"></div>
+    
+    <div id="navigation-user">
+      <a href="/settings" id="navigation-user-settings" role="menuitem">&nbsp;</a>
+      <div class="navigation-separator"></div>
+      <a href="/logout" id="navigation-user-logout" role="menuitem">&nbsp;</a>
+      <div class="navigation-separator"></div>
+      <div id="navigation-user-name" role="menuitem">[% user.fullname %]</div>
+      <img id="navigation-user-avatar" src="http://www.gravatar.com/avatar/d73002116c8244d8fd2042cc422c2117?s=22" alt="[% user.fullname %]">
+    </div>
+    
+    <div id="navigation-main">
+      <div id="navigation-name">[% page.app %]</div>
+      <ul role="menubar">
         <li role="menuitem"><a href="#">Home</a></li>
         <li role="menuitem"><a href="#">About</a></li>
         <li role="menuitem">
@@ -59,23 +69,36 @@
             <li><a href="#">Marketing</a></li>
           </ul>
         </li>
-        <li role="menuitem"><a href="#">Portfolio</a></li>
+        <li role="menuitem" class="navigation-selected">
+            <a href="#">Portfolio</a>
+            <ul>
+              <li><a href="#">Branding2</a></li>
+              <li><a href="#">Print2</a></li>
+              <li><a href="#">Web2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Branding2</a></li>
+              <li><a href="#">Print2</a></li>
+              <li><a href="#">Web2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Branding2</a></li>
+              <li><a href="#">Print2</a></li>
+              <li><a href="#">Web2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Branding2</a></li>
+              <li><a href="#">Print2</a></li>
+              <li><a href="#">Web2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Marketing2</a></li>
+              <li><a href="#">Marketing2</a></li>
+            </ul>
+        </li>
         <li role="menuitem"><a href="#">Clients</a></li>
         <li role="menuitem"><a href="#">Our blog</a></li>
         <li role="menuitem"><a href="#">Downloads</a></li>
       </ul>
     </div>
-    <div id="navgation-user" role="menubar">
-      <ul>
-        <li role="menuitem"><a href="/logout" id="navigation-user-logout">Logout</a></li>
-        <li role="menuitem"><a href="/settings" id="navigation-user-settings">Settings</a></li>
-        <li role="menuitem">
-          <a href="#" id="navigation-user-name">[% user.fullname %]
-          <img id="navigation-user-avatar" src="http://www.gravatar.com/avatar/d73002116c8244d8fd2042cc422c2117?s=22" alt="[% user.fullname %]">
-          </a>
-        </li>
-      </ul>
-    </div>
+
   </section>
 
   <section role="main">

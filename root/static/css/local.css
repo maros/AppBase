@@ -1,21 +1,7 @@
+/* User messages */
+
 #message > DIV {
   min-height: 26px;
-  
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-
-  display: box;
-  box-orient: horizontal;
-  box-pack: center;
-  box-align: center;
-  
   background: rgb(247,224,167); /* Old browsers */
   background: -moz-linear-gradient(top, rgba(247,224,167,1) 0%, rgba(243,197,88,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,224,167,1)), color-stop(100%,rgba(243,197,88,1))); /* Chrome,Safari4+ */
@@ -27,8 +13,9 @@
 }
 
 #message .message-close {
-  text-decoration: none;
   position: absolute;
+  z-index: 100;
+  text-decoration: none;
   right: 0px;
   margin: 4px 5px 4px 4px;
   width: 18px;
@@ -42,16 +29,15 @@
 }
 
 #message .message-text {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
+  position: relative;
   line-height:150%;
-  margin-right: 26px;
+  padding: 2px 26px 2px 32px;
   overflow:hidden;
   text-align: left;
 }
 
 #message .message-icon {
+  position: absolute;
   width: 19px; 
   height: 19px; 
   background-image: url('../img/sprites.png');
@@ -71,23 +57,11 @@
   background-position: -38px -21px;
 }
 
+/* Navigation */
+
 #navigation {
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-
-  display: box;
-  box-orient: horizontal;
-  box-pack: center;
-  box-align: center;
-  
   height: 38px;
+  color: #dcdcdc;
   background: rgb(60,60,60); /* Old browsers */
   background: -moz-linear-gradient(top, rgba(60,60,60,1) 0%, rgba(31,31,31,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(60,60,60,1)), color-stop(100%,rgba(31,31,31,1))); /* Chrome,Safari4+ */
@@ -103,42 +77,144 @@
   line-height: 38px;
 }
 
-#navgation-logo {
+
+
+#navigation-logo {
+  position: absolute;
   width: 28px;
   margin-left: 5px;
   background-image: url('../img/sprites.png');
   background-position: -63px 0px;
 }
 
-#navgation-name {
-  left: 38px;
+#navigation-main {
+  position: relative;
+  margin: 0px 215px 0px 38px;
 }
 
-#navgation-main {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
+#navigation-name {
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  font-weight: 800;
 }
 
-#navgation-main li {
-  display: inline;
+#navigation-main ul {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
 }
 
-#navgation-main ul {
-  display: none;
-}
-
-#navgation-user {
-  right: 5px;
-  height: 38px;
-  line-height: 38px;
-}
-
-#navgation-user li {
-  display: inline;
+#navigation-main li {
+  display: inline-block;
+  list-style: none;
   
 }
 
+/*
+#navigation-main li:before {
+  content: url('../img/separator.png');
+  float: left;
+}
+*/
+
+#navigation-main a {
+  display: inline-block;
+  padding: 0 6px 0 6px;
+}
+
+#navigation-main li:hover, #navigation-main li.navigation-selected {
+  background-color: #000000;
+  background: -moz-linear-gradient(top, rgba(90,90,90,1) 0%, rgba(31,31,31,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(90,90,90,1)), color-stop(100%,rgba(31,31,31,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(31,31,31,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(31,31,31,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(90,90,90,1) 0%,rgba(31,31,31,1) 100%); /* IE10+ */
+  background: linear-gradient(top, rgba(90,90,90,1) 0%,rgba(31,31,31,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a5a5a', endColorstr='#1f1f1f',GradientType=0 ); /* IE6-9 */
+}
+
+#navigation-main a {
+  text-decoration: none;
+  color: #dcdcdc;
+}
+
+#navigation-main ul li ul{
+  position: absolute;
+  z-index: 100;
+  top: 38px;
+  height: 25px;
+  line-height: 25px;
+  
+  left: -38px;
+  padding: 0 215px 0 38px;
+  width: 100%;
+  
+  background: rgb(60,60,60); /*sub menu background color */
+  display: none;
+}
+
+#navigation-main ul li:hover ul {
+  z-index: 110;
+}
+
+#navigation-main ul li ul li:hover {
+  background: rgb(31,31,31);
+}
+
+#navigation-main ul li:hover ul, #navigation-main ul li.navigation-selected ul {
+  display: block;
+}
+
+
+
+/* Navigation User */
+
+#navigation-user {
+  position: absolute;
+  right: 0px;
+}
+
+#navigation-user a, #navigation-user img , #navigation-user div {
+  display: inline-block;
+  float: left;
+}
+
+.navigation-separator {
+  background-image: url('../img/sprites.png');
+  background-position: -62px -1px;
+  width: 1px;
+  height: 38px;
+}
+
+#navigation-user-name {
+  margin-left: 3px;
+  max-width: 120px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  height: 38px;
+}
+
 #navigation-user-avatar {
-   padding: 7px;
+  padding: 7px;
+}
+
+#navigation-user-settings, #navigation-user-logout {
+  display: inline-block;
+  background-image: url('../img/sprites.png');
+  width: 20px;
+  height: 20px;
+  margin: 9px 5px 9px 3px;
+  text-decoration: none;
+}
+
+#navigation-user-settings {
+  background-position: -22px -1px;
+}
+
+#navigation-user-logout {
+  background-position: -1px -1px;
 }
