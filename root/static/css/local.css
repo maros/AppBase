@@ -6,8 +6,11 @@ header {
   width: 100%;
 }
 
-#message > DIV {
+#message {
   display: none;
+}
+
+#message > DIV {
   background: #ffe13e;
   background: -moz-linear-gradient(top, #ffe13e 0%, #ffc703 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffe13e), color-stop(100%,#ffc703));
