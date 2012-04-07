@@ -1,5 +1,5 @@
 # ============================================================================
-package AppBase::Schema::Result::Session;
+package AppBase::Schema::Result::Lock;
 # ============================================================================
 use 5.010;
 
@@ -8,15 +8,10 @@ use namespace::autoclean;
 
 extends 'AppBase::Schema::ResultBase';
 
-__PACKAGE__->table("session");
+__PACKAGE__->table("lock");
 
-with
-    'AppBase::Schema::Field::Agent',
-    'AppBase::Schema::Field::VariableStorage';
-
-
-has 'agent_authentication' => (
-    isa => 'AppBase::Schema::Result::AgentAuthentification',
+has 'session' => (
+    isa => 'AppBase::Schema::Result:Session',
     is  => 'rw',
     required => 1,
     add_column => {
@@ -27,32 +22,32 @@ has 'agent_authentication' => (
     },
 );
 
-has ['sessionid','client_device','client_address'] => (
+has 'class' => (
     isa => 'Str',
     is  => 'rw',
     required => 1,
     add_column => {
-        data_type => "character varying",
+        data_type => "Str",
         default_value => undef,
         is_nullable => 0,
         size => undef,
     },
 );
 
-has 'start_timestamp' => (
-    isa => 'DateTime',
+
+has 'element' => (
+    isa => 'Int',
     is  => 'rw',
     required => 1,
-    default => sub { DateTime->new( time_zone => 'floating' ) },
     add_column => {
-        data_type => "timestamp without time zone",
-        default_value => "now()",
+        data_type => "integer",
+        default_value => undef,
         is_nullable => 0,
-        size => 8,
+        size => 4,
     },
 );
 
-has 'end_timestamp' => (
+has 'maxage' => (
     isa => 'DateTime',
     is  => 'rw',
     add_column => {
@@ -63,13 +58,15 @@ has 'end_timestamp' => (
     },
 );
 
-__PACKAGE__->has_many(
-    'locks',
-    'AppBase::Schema::Result::Lock',
-    { "foreign.session" => "self.id" },
+#__PACKAGE__->resultset_class('AppBase::Schema::ResultSet::Lock');
+
+__PACKAGE__->belongs_to(
+    'session',
+    'AppBase::Schema::Result::Session',
+    { "foreign.id" => "self.session" },
 );
-  
-#__PACKAGE__->resultset_class('AppBase::Schema::ResultSet::Session');
+
+__PACKAGE__->add_unique_constraint("lock_class_element_unique", ["class","element"]);
 
 __PACKAGE__->meta->make_immutable( inline_constructor => 0 );
 no Moose;
